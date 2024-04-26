@@ -1,0 +1,85 @@
+###Get Service document
+http://localhost:4004/odata/v4/CatalogService
+
+###Get Service metadata document
+http://localhost:4004/odata/v4/CatalogService/$metadata
+
+
+###Get All Employee Data
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+
+###Get All Employee Data--version 2 for compatibility
+http://localhost:4004/v2/odata/v4/CatalogService/EmployeeSet
+
+###Get Single Employee Data by Key - ID
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19847FB
+
+###Load Chunk by Chunk
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$top=4&$skip=2
+
+
+###Reduce the volume of data
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$select=ID,nameFirst,email
+
+###Get The count of records
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/$count
+
+
+###How to create new employee - called as POST call
+POST http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+Content-Type: application/json
+
+{
+  "nameFirst": "Virat",
+  "nameMiddle": "",
+  "nameLast": "Kohli",
+  "nameInitials": null,
+  "sex": "M",
+  "language": "E",
+  "phoneNumber": "+1 224 374 522",
+  "email": "virat.kohli@ipl.com",
+  "loginName": "VIRATS",
+  "Currency_code": "USD",
+  "salaryAmount": 110962,
+  "accountNumber": "222333444",
+  "bankId": "51005",
+  "bankName": "My Bank of Antioch"
+}
+
+
+###Read the employee
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/2da9044d-b75e-489c-adf3-6b4092e95f40
+
+
+###Change the data - PATCH
+###Read the employee
+PATCH http://localhost:4004/odata/v4/CatalogService/EmployeeSet/bd82d1a0-4f59-4891-baca-af57d0d2b6f3
+Content-Type: application/json
+
+{
+    "salaryAmount":"10000000"
+}
+
+####Remove data from DB
+DELETE http://localhost:4004/odata/v4/CatalogService/EmployeeSet/2da9044d-b75e-489c-adf3-6b4092e95f40
+
+
+###Get All purchase orders
+ http://localhost:4004/odata/v4/CatalogService/POs
+
+
+###Single ordxer
+ http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC28052?$expand=Items
+
+###Test the boost action
+ POST http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC28052/CatalogService.boost
+ Content-Type: application/json
+
+ {}
+
+###Single ordxer
+ http://localhost:4004/odata/v4/CatalogService/getLargestOrder()
+
+ 
+###Read custom entity for emplouyee
+ http://localhost:4004/odata/v4/MyService/ReadEmployeeSrv

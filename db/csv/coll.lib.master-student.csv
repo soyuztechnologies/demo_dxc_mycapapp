@@ -1,0 +1,8 @@
+id,name,age,semester_id,grade,houseNo,street,pincode,country
+1,anubhav,32,7,false,J98,MG Road,122018,IN
+2,sonia,31,7,false,F88,MG Road,158520,IN
+3,ananya,29,7,true,B52,Richmond Road,560066,IN
+4,syed,23,7,true,S99,Richmond Road,659950,IN
+5,srini,25,6,true,707,Shivaji Road,122018,IN
+6,megha,26,6,true,C-90,Shivaji Road,558896,IN
+7,bilal,25,5,true,C-80,Shivaji Road,122018,IN
