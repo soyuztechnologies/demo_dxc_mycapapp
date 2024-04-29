@@ -8,7 +8,8 @@
   "dependencies": {
     "@sap/cds": "^7",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
-    "express": "^4"
+    "express": "^4",
+    "@sap/cds-hana": "^2"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -20,5 +21,10 @@
   },
   "sapux": [
     "app/purchaseorderapp"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "db": "hana"
+    }
+  }
 }
